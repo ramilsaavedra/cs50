@@ -3,7 +3,7 @@ import * as path from 'path';
 import { parse } from 'csv-parse';
 
 type FavoriteData = {
-  Timestamp: Date;
+  Timestamp: string;
   language: string;
   problem: string;
 };
@@ -17,6 +17,7 @@ type FavoriteData = {
     fileContent,
     {
       delimiter: ',',
+      columns: true,
     },
     (error, result: FavoriteData[]) => {
       if (error) {
